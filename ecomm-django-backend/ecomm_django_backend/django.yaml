@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: django
+  template:
+    metadata: 
+      labels:
+        app: django
+    spec:
+      containers:
+      - name: django
+        image: arryuannkhanna/my-django-backend:latest
+        command: ["sh", "-c", "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+        env:
+          - name: DATABASE_URL
+            value: "postgres://myuser:Arryuann123@postgres:5432/mydatabase"
+        ports:
+          - containerPort: 8000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: django
+spec:
+  type: NodePort  # Change to NodePort if not using a cloud provider
+  ports:
+    - port: 8000
+      targetPort: 8000
+  selector:
+    app: django
