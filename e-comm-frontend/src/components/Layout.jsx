@@ -20,9 +20,9 @@ const Layout = () => {
       <footer className="footer">
         <p>© 2024 E-Commerce. All rights reserved.</p>
         <div className="social-links">
-          <a href="#">Facebook</a>
-          <a href="#">Twitter</a>
-          <a href="#">Instagram</a>
+          <p>Facebook</p>
+          <p>Twitter</p>
+          <p>Instagram</p>
         </div>
       </footer>
       </div>
