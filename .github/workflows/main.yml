@@ -11,7 +11,7 @@ on:
 env:
   FRONTEND_IMAGE: "arryuannkhanna/react-frontend"
   BACKEND_IMAGE: "arryuannkhanna/my-django-backend"
-  DOCKER-TAG: "latest"
+  DOCKER_TAG: "latest"
 
 jobs:
   build-and-test:
