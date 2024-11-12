@@ -18,10 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated to the latest version
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3  # Updated to the latest version
         with:
           node-version: '20'
 
@@ -31,10 +31,11 @@ jobs:
           npm install
           npm run build
 
-      - name: Setup python
-        uses: actions/setup-python@v2
+      - name: Set up Python
+        uses: actions/setup-python@v4  # Updated to the latest version
         with:
           python-version: '3.8'
+
 
       - name: Buil backend
         working-directory: ./ecomm-django-backend
