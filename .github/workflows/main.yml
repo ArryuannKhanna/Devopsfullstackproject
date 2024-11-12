@@ -62,7 +62,7 @@ jobs:
           docker push ${{ env.FRONTEND_IMAGE }}:${{ env.DOCKER_TAG }}
 
       - name: Build and Push Backend Docker Image
-        working-directory: ./ecomm-django-backend
+        working-directory: ecomm-django-backend/ecomm_django_backend
         run: |
           docker build -t ${{ env.BACKEND_IMAGE }}:${{ env.DOCKER_TAG }} .
           docker push ${{ env.BACKEND_IMAGE }}:${{ env.DOCKER_TAG }}
